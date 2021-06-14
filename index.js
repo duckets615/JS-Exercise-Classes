@@ -118,12 +118,25 @@ class Car {
           + `catchPhrase`: i.e. `Don't forget the homies`.
       - The constructor calls the parent constructor passing it what it needs.
       - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on the instance.
+     
       - Instructor instances have the following methods:
-          + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
-          + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
+          + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}'
+           where subject is the param passed in.+ `grade` receives a `student` object and a `subject` string as arguments 
+           and returns '{student.name} receives a perfect score on {subject}'
   */
- class Instructor {
-
+ class Instructor extends Lambdasian {
+  constructor(obj) {
+    super(obj)
+    this.specialty = obj.specialty;
+    this.favLanguage = obj.favLanguage;
+    this.catchPhrase = obj.catchPhrase;    
+  }
+  demo(subject) {
+    return `Today we are learning about ${subject}`
+  }
+  grade(student,subject) {
+    return `${student.name} receives a perfect score on ${subject}`
+  }
  }
   /*
     TASK 5
